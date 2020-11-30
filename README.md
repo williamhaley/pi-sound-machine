@@ -4,10 +4,12 @@ Using the [pHAT BEAT](https://learn.pimoroni.com/tutorial/sandyj/getting-started
 
 The configuration scripts from Pimoroni should install the essential libraries and configuration files needed for the pHAT BEAT to function.
 
+The script uses `mpg123` to play the audio file. Make sure that is installed.
+
 Add this to `/etc/rc.local` to get the script to run at boot.
 
 ```
-sudo -u pi python3 /home/pi/audio.py &
+sudo -u pi python3 /home/pi/pi-sound-machine/audio.py &
 ```
 
 This line in `/etc/asound.conf` disables the lights on the pHAT BEAT.

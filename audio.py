@@ -28,15 +28,17 @@ def playpause(pin):
         playing = False
     else:
         print('start playing')
-        proc = Popen(['mpg123', '--loop', '-1', '/home/pi/waterfall.mp3'], shell=False, stdout=FNULL, stderr=FNULL)
+        proc = Popen(['mpg123', '--loop', '-1', '/home/pi/pi-sound-machine/waterfall.mp3'], shell=False, stdout=FNULL, stderr=FNULL)
         playing = True
 
 @phatbeat.on(phatbeat.BTN_VOLUP)
 def volume_up(pin):
+    print('volume up')
     call(['amixer', 'set', 'Master', '10%+'], stdout=FNULL, stderr=FNULL)
 
 @phatbeat.on(phatbeat.BTN_VOLDN)
 def volume_down(pin):
+    print('volume down')
     call(['amixer', 'set', 'Master', '10%-'], stdout=FNULL, stderr=FNULL)
 
 if __name__ == "__main__":
